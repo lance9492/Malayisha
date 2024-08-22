@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load store_extras %}
+
+{% block title %}Your Cart - Malayisha{% endblock %}
+
+{% block content %}
+<h2>Your Cart</h2>
+
+{% if order.orderitem_set.all %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in order.orderitem_set.all %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ item.product.price }}</td>
+                <td>${{ item.quantity|multiply:item.product.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><strong>Total</strong></td>
+                <td><strong>${{ order.total_price }}</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+    <a href="{% url 'checkout' %}" class="btn btn-primary">Proceed to Checkout</a>
+{% else %}
+    <p>Your cart is empty.</p>
+    <a href="{% url 'store' %}" class="btn btn-primary">Continue Shopping</a>
+{% endif %}
+{% endblock %}

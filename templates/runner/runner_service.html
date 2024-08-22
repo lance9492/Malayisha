@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Runner Services - Malayisha{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Runner Services</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Request an Errand</h5>
+                <form method="post" action="{% url 'request_errand' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Available Services</h5>
+                <ul class="list-group list-group-flush">
+                    {% for service in services %}
+                    <li class="list-group-item">{{ service.name }} - {{ service.description }}</li>
+                    {% empty %}
+                    <li class="list-group-item">No services available at the moment.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

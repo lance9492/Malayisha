@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to Malayisha{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Malayisha</h1>
+    <p class="lead">Your one-stop solution for e-commerce, courier services, and errand running in SADC countries.</p>
+    <hr class="my-4">
+    <p>Shop, ship, and get things done with ease.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'store' %}" role="button">Start Shopping</a>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-store fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">E-commerce Store</h5>
+                <p class="card-text">Shop for a wide range of products from our trusted sellers.</p>
+                <a href="{% url 'store' %}" class="btn btn-primary">Visit Store</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-truck fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Courier Services</h5>
+                <p class="card-text">Fast and reliable delivery across SADC countries.</p>
+                <a href="{% url 'courier' %}" class="btn btn-primary">Ship Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-running fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Errand Running</h5>
+                <p class="card-text">Get help with errands in South Africa from our trusted runners.</p>
+                <a href="{% url 'runner' %}" class="btn btn-primary">Request Errand</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

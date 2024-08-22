@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Errand Confirmation - Malayisha{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h2 class="display-4">Errand Request Confirmed</h2>
+    <p class="lead">Thank you for using our runner service!</p>
+    <hr class="my-4">
+    <p>Your errand request has been received and is being processed.</p>
+    <p>A runner will be assigned to your errand shortly.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button">Return to Home</a>
+</div>
+{% endblock %}

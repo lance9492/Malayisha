@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Courier Services - Malayisha{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Courier Services</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Request a Delivery</h5>
+                <form method="post" action="{% url 'request_delivery' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Our Services</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Fast delivery across SADC countries</li>
+                    <li class="list-group-item">Secure package handling</li>
+                    <li class="list-group-item">Real-time tracking</li>
+                    <li class="list-group-item">Affordable rates</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

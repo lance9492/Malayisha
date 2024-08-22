@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Delivery Confirmation - Malayisha{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h2 class="display-4">Delivery Request Confirmed</h2>
+    <p class="lead">Thank you for using our courier service!</p>
+    <hr class="my-4">
+    <p>Your delivery request has been received and is being processed.</p>
+    <p>A courier will be assigned to your delivery shortly.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button">Return to Home</a>
+</div>
+{% endblock %}
